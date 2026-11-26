@@ -198,7 +198,7 @@ def main():
     d.text((M, ty + 8), timeline, font=F(SANS_B, 13), fill=INK)
     d.text((M, ty + 30), "One image · Wednesday 25 November 2026 · claims dated to the day", font=F(SANS, 11), fill=MUTED)
 
-    img.save(OUT, "PNG", optimize=True)
+    img.quantize(colors=256, method=Image.MEDIANCUT).save(OUT, "PNG", optimize=True)
 
 
 if __name__ == "__main__":
